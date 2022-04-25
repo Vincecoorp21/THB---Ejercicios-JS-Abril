@@ -18,7 +18,7 @@ Poner en práctica lo aprendido hasta el momento de JS:
 
 Los desafíos que me he encontrado en este proyecto han aparecido cuando intentaba resolver las Kata's de Codewars.
 
-- Power: [(https://www.codewars.com/kata/562926c855ca9fdc4800005b/train/javascript)]
+- [@Power] (https://www.codewars.com/kata/562926c855ca9fdc4800005b/train/javascript)
 - String repeat: [https://www.codewars.com/kata/57a0e5c372292dd76d000d7e/train/javascript]
 - Can we divide it? [https://www.codewars.com/kata/5a2b703dc5e2845c0900005a/train/javascript]
 - Abbreviate a Two Word Name: [https://www.codewars.com/kata/57eadb7ecd143f4c9c0000a3/train/javascript]
