@@ -669,24 +669,17 @@ console.log(mayorQueCinco([2, 3, 4, 7, 8, 9]));
 // Crea una aplicación que nos pida un número por prompt y con un método se lo pasamos por parámetro para que nos indique si es o no un número primo, debe devolver true si es primo sino false.
 // Un número primo es aquel que solo puede dividirse entre 1 y sí mismo. Por ejemplo: 25 no es primo, ya que 25 es divisible entre 5, sin embargo, 17 si es primo.
 
-// let num = parseInt(prompt('Dime un numero'));
+function esPrimo(num) {
+  num = prompt('Dime un numero');
+  for (let i = 2; i < num; i++) {
+    if (num % i === 0) {
+      console.log(`El ${num} no es un número primo`);
+    }
+  }
+  console.log(`El ${num} es un número primo`);
+}
 
-// if (num === 1) {
-//   console.log('1 no es primo');
-// } else if (num > 1) {
-//   for (let i = 2; i < number; i++) {
-//     if (num % i === 0) {
-//       return false;
-//       break;
-//     }
-//   }
-// }
-
-// if (num % num === 0 && num % 1 === 0) {
-//   alert(`${num} Es un número primo `);
-// } else {
-//   alert(`${num} No es un número primo `);
-// }
+esPrimo();
 
 /*********FUNCTION 16  PASSWORDS********** */
 
@@ -741,7 +734,7 @@ console.log(CalculadoraInversa(2, 2, '^'));
 
 /*******************KATA'S****************/
 
-//////////***********KATA 1 POWER******REVISAR***/
+//////////***********KATA 1 POWER*********/
 
 // The goal is to create a function 'numberToPower(number, power)' that "raises" the number up to power (ie multiplies number by itself power times).
 
@@ -785,7 +778,7 @@ function isDivideBy(number, a, b) {
 
 // patrick feeney => P.F
 
-function abbrevName(name) {
+function abrevName(name) {
   let arrName = name.split(' ');
   return (arrName[0][0] + '.' + arrName[1][0]).toUpperCase();
 }
@@ -816,4 +809,60 @@ function bmi(weight, height) {
   }
 }
 
+/***********KATA 6 EASY WALLPAPER***********/
+function wallpaper(l, w, h) {
+  let numbers = [
+    'zero',
+    'one',
+    'two',
+    'three',
+    'four',
+    'five',
+    'six',
+    'seven',
+    'eight',
+    'nine',
+    'ten',
+    'eleven',
+    'twelve',
+    'thirteen',
+    'fourteen',
+    'fifteen',
+    'sixteen',
+    'seventeen',
+    'eighteen',
+    'nineteen',
+    'twenty',
+  ];
+  return w * h * l === 0
+    ? numbers[0]
+    : numbers[Math.ceil((2 * (l + w) * h * 1.15) / (10 * 0.52))];
+}
+
+console.log(wallpaper(4.0, 3.5, 3.0));
+
 /********KATA ZOMBI ATACK******* */
+
+// I'm afraid you're in a rather unfortunate situation. You've injured your leg, and are unable to walk, and a number of zombies are shuffling towards you, intent on eating your brains. Luckily, you're a crack shot, and have your trusty rifle to hand.
+
+// The zombies start at range metres, and move at 0.5 metres per second. Each second, you first shoot one zombie, and then the remaining zombies shamble forwards another 0.5 metres.
+
+// If any zombies manage to get to 0 metres, you get eaten. If you run out of ammo before shooting all the zombies, you'll also get eaten. To keep things simple, we can ignore any time spent reloading.
+
+// Write a function that accepts the total number of zombies, a range in metres, and the number of bullets you have.
+
+// If you shoot all the zombies, return "You shot all X zombies." If you get eaten before killing all the zombies, and before running out of ammo, return "You shot X zombies before being eaten: overwhelmed." If you run out of ammo before shooting all the zombies, return "You shot X zombies before being eaten: ran out of ammo."
+
+// (If you run out of ammo at the same time as the remaining zombies reach you, return "You shot X zombies before being eaten: overwhelmed.".)
+
+function zombie_shootout(zombies, range, ammo) {
+  let steps = range * 2;
+  if (ammo < range_per_meter && zombies > ammo) {
+    return `You shot ${ammo} zombies before being eaten: ran out of ammo.`;
+  } else if (zombies > steps) {
+    return `You shot ${steps} zombies before being eaten: overwhelmed.`;
+  } else {
+    return `You shot all ${zombies} zombies.`;
+  }
+}
+console.log(zombie_shootout(100, 8, 200));
